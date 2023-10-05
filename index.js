@@ -5,4 +5,3 @@ function getBMI(){
     console.log(calcBMI(weight,height));
 }
 getBMI();
-
