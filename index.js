@@ -1,23 +1,28 @@
-getBMI();
 
 function getBMI(){
     const weight = prompt('Enter your weight, in kilograms.');
     const height = prompt('Enter your height, in centimeters.');
-    calcBMI(weight, height);
-    console.log(calcBMI(weight, height));
+    const BMI = calcBMI(weight, height);
+    console.log('Your BMI is: ' + BMI);
+    categorizeBMI(BMI)
 }
 
 function calcBMI(weight, height) {
-    return ((weight / (height * height))*10000);
+    const BMI = ((weight / (height * height))*10000);
+    return BMI;
 }
 
-if (calcBMI < 18.5) {
-return "You're underweight."
-}
-if (calcBMI(weight,height) > 24.9) {
-return "Your weight is normal."
-}
+function categorizeBMI(BMI){
 
-if (calcBMI(weight,height) > 29.9) {
-console.log("You're overweight.")
+    if (BMI < 18.5) {
+    console.log ("You're underweight.");
+    } else if (BMI >= 18.5 && BMI < 24.9) {
+    console.log ("Your weight is healthy.");
+    } else if (BMI >= 25 && BMI < 29.9) {
+    console.log ("Your weight is unhealthy.");
+    } else {
+    console.log ("You're obese.");
+    } 
+    return(categorizeBMI); 
 }
+getBMI();
