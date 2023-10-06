@@ -11,12 +11,11 @@ function calcBMI(weight, height) {
     return ((weight / (height * height))*10000);
 }
 
-if (calcBMI(weight,height) < 18.5) {
-console.log("You're underweight.")
+if (calcBMI < 18.5) {
+return "You're underweight."
 }
-
 if (calcBMI(weight,height) > 24.9) {
-console.log("Your weight is normal.")
+return "Your weight is normal."
 }
 
 if (calcBMI(weight,height) > 29.9) {
