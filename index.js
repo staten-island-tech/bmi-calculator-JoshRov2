@@ -1,14 +1,17 @@
 
-function getBMI(){
-    const weight = prompt('Enter your weight, in kilograms.');
-    const height = prompt('Enter your height, in centimeters.');
+const user = {
+    name: prompt("Enter your name."),
+    weight: prompt('Enter your weight, in kilograms.'),
+    height: prompt('Enter your height, in centimeters.'),
+}
+function getBMI(user){;
     const BMI = calcBMI(weight, height);
     console.log('Your BMI is: ' + BMI);
     categorizeBMI(BMI)
 }
 
 function calcBMI(weight, height) {
-    const BMI = ((weight / (height * height))*10000);
+    const BMI = ((user.weight / (user.height * user.height))*10000);
     return BMI;
 }
 
