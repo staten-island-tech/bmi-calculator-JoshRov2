@@ -1,31 +1,27 @@
-
-const user = {
-    name: prompt("Enter your name."),
-    weight: prompt('Enter your weight, in kilograms.'),
-    height: prompt('Enter your height, in centimeters.'),
-}
-function getBMI(user){;
-    const BMI = calcBMI(weight, height);
-    console.log('Your BMI is: ' + BMI);
-    categorizeBMI(BMI)
-}
-
 function calcBMI(weight, height) {
-    const BMI = ((user.weight / (user.height * user.height))*10000);
-    return BMI;
+    const userBMI = ((weight / (height * height))*10000);
+    return userBMI;
 }
 
-function categorizeBMI(BMI){
-
-    if (BMI < 18.5) {
+function categorizeBMI(userBMI) {
+    if (userBMI < 18.5) {
     console.log ("You're underweight.");
-    } else if (BMI >= 18.5 && BMI < 24.9) {
+    } else if (userBMI >= 18.5 && userBMI < 24.9) {
     console.log ("Your weight is healthy.");
-    } else if (BMI >= 25 && BMI < 29.9) {
+    } else if (userBMI >= 25 && userBMI < 29.9) {
     console.log ("Your weight is unhealthy.");
     } else {
     console.log ("You're obese.");
-    } 
-    return(categorizeBMI); 
+    }
+    return(categorizeBMI);
 }
-getBMI();
+
+const user = {
+    name: "Josh Rovensky",
+    heightCm: 157,
+    weightKg: 57
+};
+
+const userBMI = calcBMI(user.weightKg, user.heightCm);
+console.log(user.name + ", your BMI is: " + userBMI);
+categorizeBMI(userBMI);
